@@ -8,13 +8,13 @@ if Gem.win_platform?
   end
 end
 
-require_relative 'test'
-require_relative 'result_printer'
+require_relative 'lib/test'
+require_relative 'lib/result_printer'
 
-version = "Оценка уровня общительности (тест В.Ф. Ряховского)\n" \
+VERSION = "Оценка уровня общительности (тест В.Ф. Ряховского)\n" \
   "Версия 0.2.\n\n"
 
-puts version
+puts VERSION
 
 name = ARGV[0]
 
