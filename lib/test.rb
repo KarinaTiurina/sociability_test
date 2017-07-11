@@ -4,13 +4,13 @@ class Test
   def initialize
     @questions = []
 
-    current_path = File.dirname(__FILE__)
+    current_path = __dir__
     file_name = current_path + "/../data/questions.txt"
 
     if File.exist?(file_name)
-        @questions = File.readlines(file_name, encoding: 'UTF-8')
-      else
-        @questions  = ["Вопросы отсутствуют"]
+      @questions = File.readlines(file_name, encoding: 'UTF-8')
+    else
+      @questions  = ["Вопросы отсутствуют"]
     end
 
     @total_points = 0
@@ -19,7 +19,6 @@ class Test
   end
 
   def change_current_answer(user_input)
-    puts user_input
     self.current_answer = case user_input
                           when "1" then :yes
                           when "2" then :no

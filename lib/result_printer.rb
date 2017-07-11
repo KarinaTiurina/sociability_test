@@ -4,13 +4,13 @@ class ResultPrinter
   def initialize
     @results = []
 
-    current_path = File.dirname(__FILE__)
+    current_path = __dir__
     file_name = current_path + "/../data/results.txt"
 
     if File.exist?(file_name)
-        @results = File.readlines(file_name, encoding: 'UTF-8')
-      else
-        @results  = ["Результаты отсутствуют"]
+      @results = File.readlines(file_name, encoding: 'UTF-8')
+    else
+      @results  = ["Результаты отсутствуют"]
     end
   end
 
